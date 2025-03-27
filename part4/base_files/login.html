@@ -4,21 +4,142 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <main>
-        <form id="login-form">
-            <h2>Login</h2>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+    <header>
+        <a href="index.html" id="index-link">
+            <img src="images/logo.png" alt="Application Logo" class="logo">
+        </a>
+        <nav>
+            <a href="login.html" class="login-button" id="logo-link">Login</a>
+        </nav>
+    </header>
+
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="/login" method="POST">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email">
+            </div>
             
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required placeholder="Enter your password">
+            </div>
             
-            <button type="submit">Login</button>
+            <button type="submit" class="login-button">Login</button>
+            
+            <div class="forgot-password">
+                <a href="/forgot-password">Forgot password?</a>
+            </div>
         </form>
-    </main>
+    </div>
     <script src="scripts.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        header {
+            background-color: #F4A43C;
+            color: #fff;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header .logo {
+            width: 120px;
+            height: auto;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 1rem;
+        }
+        
+        .login-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        h2 {
+            text-align: center;
+            margin-bottom: 24px;
+            color: #333;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+        
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            outline: none;
+            border-color: #4a90e2;
+            box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+        }
+        
+        .login-button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .login-button:hover {
+            background-color: #3a7bc8;
+        }
+        
+        .forgot-password {
+            text-align: center;
+            margin-top: 16px;
+        }
+        
+        .forgot-password a {
+            color: #4a90e2;
+            text-decoration: none;
+        }
+        
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </body>
 </html>
